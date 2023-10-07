@@ -8,11 +8,7 @@ RUN npm i -g @angular/cli@16; \
     npm install
 
 COPY . .
-RUN ls -l
 RUN npm run build-prod
-RUN ls -l
-RUN ls -l /app/deploy/nginx/conf.d
-RUN ls -l /app/dist/nepeinann
 
 FROM nginx
 
