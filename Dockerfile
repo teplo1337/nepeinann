@@ -4,7 +4,7 @@ WORKDIR "/app"
 
 RUN mkdir ./certs
 COPY package.json package-lock.json deploy ./
-COPY /usr/projects/certs ./certs
+COPY ../certs ./certs
 
 RUN npm i -g @angular/cli@16; \
     npm install
