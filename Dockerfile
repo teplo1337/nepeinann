@@ -2,9 +2,7 @@ FROM node:18-alpine3.18 as builder
 RUN mkdir /app
 WORKDIR "/app"
 
-RUN mkdir ./certs
-COPY package.json package-lock.json deploy ./
-COPY ../certs ./certs
+COPY package.json package-lock.json deploy certs ./
 
 RUN npm i -g @angular/cli@16; \
     npm install
