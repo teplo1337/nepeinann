@@ -9,7 +9,7 @@ RUN npm i -g @angular/cli@16; \
 
 COPY . .
 
-RUN npm run build-prod
+RUN ng build
 RUN ls -l
 RUN ls -l /app/deploy/nginx/conf.d
 RUN ls -l /app/dist/nepeinann
