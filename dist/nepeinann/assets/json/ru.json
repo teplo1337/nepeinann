@@ -1,0 +1,48 @@
+{
+  "blocks": [
+    {
+      "type": "smallBlocks",
+      "tag": "contact",
+      "tagName": "Контакты",
+      "child": [
+        {
+          "id": 3,
+          "type": "smallCube",
+          "text1": "Меня зовут",
+          "text2": "Непеина Наталья Николаевна"
+        },
+        {
+          "id": 4,
+          "type": "smallCube",
+          "text1": "Телефонный номер",
+          "text2": "+7 922 104 76 84"
+        },
+        {
+          "id": 5,
+          "type": "smallCube",
+          "text1": "Почтовый адрес",
+          "text2": "nepeinann@yandex.ru"
+        },
+        {
+          "id": 6,
+          "type": "smallCube",
+          "text1": "Город работы",
+          "text2": "г. Екатеринбург"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "tag": "message",
+      "tagName": "Отправить сообщение",
+      "type": "message",
+      "text1": "{{ messageSent }}, ваше сообщение успешно отправленно",
+      "text2": "Я отвечу вам как только прочитаю сообщение!",
+      "name": "Ваше имя",
+      "phone": "Ваш телефон",
+      "subject": "Тема сообщения",
+      "message": "Сообщение",
+      "send": "Отправить"
+    }
+  ]
+}
