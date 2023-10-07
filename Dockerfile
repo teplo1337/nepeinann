@@ -13,8 +13,7 @@ RUN npm run build-prod
 
 FROM nginx
 
-WORKDIR /usr/share/nginx/html
-COPY --from=builder ./app/deploy/nginx/conf.d /etc/nginx/conf.d
-COPY --from=builder ./app/dist/nepeinann .
+COPY --from=builder /app/deploy/nginx/conf.d /etc/nginx/conf.d
+COPY --from=builder /app/dist/nepeinann /usr/share/nginx/html
 
 RUN nginx -t
