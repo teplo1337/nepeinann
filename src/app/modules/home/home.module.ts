@@ -6,12 +6,18 @@ import {NgxMaskDirective, provideEnvironmentNgxMask} from "ngx-mask";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ApiService} from "@app/modules/home/services/api.service";
 import {HttpClientModule} from "@angular/common/http";
+import { MessageBlockComponent } from './components/message-block/message-block.component';
+import {TranslateService} from "@app/modules/home/services/translate.service";
+import {TranslatePipe} from "@app/modules/home/pipes/translate.pipe";
+import { SmallBlockComponent } from './components/small-block/small-block.component';
 
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    MessageBlockComponent,
+    SmallBlockComponent
   ],
   imports: [
     CommonModule,
@@ -21,11 +27,13 @@ import {HttpClientModule} from "@angular/common/http";
     }]),
     NgxMaskDirective,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslatePipe
   ],
   providers: [
     provideEnvironmentNgxMask(),
     ApiService,
+    TranslateService
   ]
 })
 export class HomeModule { }

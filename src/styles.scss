@@ -10,6 +10,7 @@ $black: #000;
 $darken: #191a1c;
 $light: #9da1a5;
 $primary: #9d8f8f;
+$primaryAlt: darken($darken,30%);
 
 html {
   // overflow-x: hidden;
@@ -20,10 +21,10 @@ body {
   font-size: 14px;
   line-height: 1.8;
   font-weight: 400;
-  color: #9da1a5;
+  color: $light;
   background-size: cover;
   background-repeat: no-repeat;
-  background: #191a1c;
+  background: $darken;
   &.menu-show {
     overflow: hidden;
     position: fixed;

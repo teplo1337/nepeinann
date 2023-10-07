@@ -1,28 +1,8 @@
 <nav id="navbar" class="navbar">
   <ul class="nav-menu">
-    <li>
-      <a data-scroll="home" href="#home" class="dot active">
-        <span>Home</span>
-      </a>
-    </li>
-    <li>
-      <a data-scroll="about" href="#about" class="dot">
-        <span>About</span>
-      </a>
-    </li>
-    <li>
-      <a data-scroll="services" href="#services" class="dot">
-        <span>Services</span>
-      </a>
-    </li>
-    <li>
-      <a data-scroll="work" href="#work" class="dot">
-        <span>Gallery</span>
-      </a>
-    </li>
-    <li>
-      <a data-scroll="testimonial" href="#testimonial" class="dot">
-        <span>Testimony</span>
+    <li *ngFor="let block of blocks$ | async">
+      <a [attr.data-scroll]="block.tag" [href]="'#' + block.tag" class="dot">
+        <span>{{block.tagName}}</span>
       </a>
     </li>
   </ul>
@@ -39,7 +19,7 @@
           <h1 class="logo"><a href="index.html"><span class="flaticon-camera-shutter"></span>Snapshot<small>Photographer / San Francisco</small></a></h1>
           <h1 class="mb-4">We Make <br>Something Great</h1>
           <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts.</p>
-          <p class="mt-5"><a href="#" class="btn-custom">Contact us <span class="ion-ios-arrow-round-forward"></span></a></p>
+          <p class="mt-5"><a href="#contact" class="btn-custom">Contact us</a></p>
         </div>
       </div>
     </div>
@@ -214,7 +194,7 @@
 </section>
 <!-- End Services Section -->
 
-<!-- Start Testimonials Section -->
+<!-- Start reviewss Section -->
 <section id="work" class="ftco-section">
   <div class="container">
     <div class="row justify-content-center">
@@ -390,7 +370,7 @@
 </section>
 <!-- End Project Section -->
 
-<section class="ftco-section testimony-section" id="testimonial">
+<section class="ftco-section testimony-section" id="reviews">
   <div class="container">
     <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-4 heading-section ftco-animate">
@@ -489,7 +469,7 @@
 </section>
 
 <!-- Start Contact Section -->
-<section class="ftco-section contact-section" id="contact">
+<section class="ftco-section contact-section">
   <div class="container">
     <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-4 heading-section text-center ftco-animate">
@@ -498,85 +478,33 @@
       </div>
     </div>
 
-    <div class="row mb-5">
-      <div class="col-md-3 d-flex ftco-animate">
-        <div class="align-self-stretch box text-center p-4">
-          <div class="icon d-flex align-items-center justify-content-center">
-            <span class="icon-phone2"></span>
-          </div>
-          <div>
-            <h3 class="mb-4">Меня зовут</h3>
-            <p>Непеина Наталья Николаевна</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 d-flex ftco-animate">
-        <div class="align-self-stretch box text-center p-4">
-          <div class="icon d-flex align-items-center justify-content-center">
-            <span class="icon-phone2"></span>
-          </div>
-          <div>
-            <h3 class="mb-4">Телефонный номер</h3>
-            <p><a href="tel://+79221047684">+7 922 104 76 84</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 d-flex ftco-animate">
-        <div class="align-self-stretch box text-center p-4">
-          <div class="icon d-flex align-items-center justify-content-center">
-            <span class="icon-paper-plane"></span>
-          </div>
-          <div>
-            <h3 class="mb-4">Почтовый адрес</h3>
-            <p><a href="mailto:nepeinann@yandex.ru">nepeinann@yandex.ru</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 d-flex ftco-animate">
-        <div class="align-self-stretch box text-center p-4">
-          <div class="icon d-flex align-items-center justify-content-center">
-            <span class="icon-globe"></span>
-          </div>
-          <div>
-            <h3 class="mb-4">Город работы</h3>
-            <p>г. Екатеринбург</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ng-container *ngIf="{ blocks: blocks$ | async } as async">
+      <ng-container *ngFor="let block of async.blocks; let ind = index">
+        <app-message-block *ngIf="block.type === 'message'"
+                           [attr.id]="block.tag"
+                           [id]="block.id"></app-message-block>
 
-    <div *ngIf="!messageSent; else messageSentTmpl" class="row block-9  ftco-animate" [formGroup]="form" >
-      <div class="col-md-12 ">
-        <form class="contact-form p-4 p-md-5 py-md-5">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Ваше имя" maxlength="30" formControlName="name">
+        <ng-container *ngIf="block.type === 'smallBlocks'" >
+          <div class="row mb-5" [attr.id]="block.tag">
+            <div class="col-md d-flex ftco-animate" *ngFor="let child of block.child" [id]="child.id">
+              <div class="align-self-stretch box text-center p-4">
+                <div class="icon d-flex align-items-center justify-content-center">
+                  <span class="icon-globe"></span>
+                </div>
+                <div>
+                  <app-small-block [id]="child.id"></app-small-block>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Ваш телефон"
-                formControlName="phone"
-                [mask]="'+0 (000) 000-00-00'"
-            >
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Тема сообщения" formControlName="subject">
-          </div>
-          <div class="form-group">
-            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Сообщение" formControlName="message"></textarea>
-          </div>
-          <div class="form-group">
-            <input (click)="send()" [disabled]="form.invalid" value="Отправить" class="send btn btn-primary py-3 px-5">
-          </div>
-        </form>
-      </div>
-    </div>
-    <ng-template #messageSentTmpl>
-      <div class="message-sent row justify-content-center mb-5 pb-3">
-        <div class="col-md-4 heading-section text-center">
-          <h2 class="mb-4">{{ messageSent }}, ваше сообщение успешно отправленно</h2>
-          <p>Я отвечу вам как только прочитаю сообщение!</p>
-        </div>
-      </div>
-    </ng-template>
+        </ng-container>
+
+      </ng-container>
+    </ng-container>
+
+
+
+
   </div>
 </section>
 
