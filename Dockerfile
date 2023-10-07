@@ -15,6 +15,6 @@ FROM nginx
 
 WORKDIR /usr/share/nginx/html
 
-COPY --from=builder ./app/dist/nepeinann /
+COPY --from=builder ./app/dist/nepeinann .
 
 RUN nginx -t
