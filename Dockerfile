@@ -15,6 +15,6 @@ FROM nginx
 RUN rm -f /usr/share/nginx/html/index.html /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/deploy/nginx/conf.d /etc/nginx/conf.d
 COPY --from=builder /app/dist/nepeinann /usr/share/nginx/html
-COPY /usr/projects/certs /usr/certs/
+COPY /usr/projects/certs /usr/certs
 
 RUN nginx -t
