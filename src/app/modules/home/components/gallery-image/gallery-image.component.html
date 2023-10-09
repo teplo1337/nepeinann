@@ -1,0 +1,18 @@
+<div class="container-fluid px-md-0" >
+  <div class="row no-gutters">
+    <div class="col-md-4" *ngFor="let item of items" >
+
+      <div class="model img d-flex align-items-end" style="background-image: url({{item.img}})">
+        <a (click)="$event.preventDefault()" href="assets/img/portrait-1.webp" class="icon image-popup d-flex justify-content-center align-items-center">
+          <span class="icon-expand"></span>
+        </a>
+        <div class="desc w-100 px-4">
+          <div class="text w-100 mb-3">
+            <span>Nature</span>
+            <h2>Beautiful Work</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

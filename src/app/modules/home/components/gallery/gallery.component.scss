@@ -2,12 +2,23 @@
   margin-bottom: 3rem;
   padding-bottom: 1rem ;
   display: block;
+  cursor: grab;
+
 }
 
 .img {
-  width: 370px;
-  height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 1000px;
+
+  @media (max-width: 400px) {
+    width: 100%;
+    height: 500px;
+  }
+
+  @media (min-width: 1060px) {
+    width: 370px;
+    height: 500px;
+  }
 }

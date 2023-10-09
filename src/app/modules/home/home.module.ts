@@ -15,6 +15,7 @@ import {AnimationsModule} from "@app/modules/animations/animations.module";
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryItemComponent } from './components/gallery/gallery-item/gallery-item/gallery-item.component';
 import {CarouselModule} from "ngx-owl-carousel-o";
+import { GalleryImageComponent } from './components/gallery-image/gallery-image.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {CarouselModule} from "ngx-owl-carousel-o";
     MidBlockComponent,
     GalleryComponent,
     GalleryItemComponent,
+    GalleryImageComponent,
   ],
   imports: [
     CommonModule,

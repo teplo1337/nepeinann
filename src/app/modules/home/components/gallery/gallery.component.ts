@@ -25,7 +25,7 @@ export class GalleryComponent {
       600:{
         items: 1
       },
-      1000:{
+      1060:{
         items: 3
       }
     }

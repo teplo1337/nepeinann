@@ -19,6 +19,6 @@ export class TranslateService {
     const arr = obj.filter((s: any) => s.child).reduce((a: any[], b: any) => [...a, ...b.child], []);
     const a = [...obj, ...arr]
       .find((b: any) =>  b.id === id);
-    return a[key];
+    return a?.[key];
   }
 }
