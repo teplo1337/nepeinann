@@ -1,0 +1,7 @@
+<owl-carousel-o [options]="config">
+  <ng-template  [width]="400" carouselSlide *ngFor="let item of items">
+
+    <div *ngIf="type === 'img'" class="img" style="background-image: url({{item.img}})"></div>
+    <app-gallery-item *ngIf="type === 'block'" [id]="item.id"></app-gallery-item>
+  </ng-template>
+</owl-carousel-o>

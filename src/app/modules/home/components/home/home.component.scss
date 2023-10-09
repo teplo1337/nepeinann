@@ -1,0 +1,30 @@
+#navbar {
+  a {
+    pointer-events: none;
+  }
+  span {
+    user-select: none;
+    pointer-events: none;
+  }
+  .nav-menu li .dot::after {
+    display: none;
+    pointer-events: auto;
+  }
+  span.dot {
+    pointer-events: auto;
+    transform: translateY(-50%) scale(1);
+    width: 15px;
+    height: 15px;
+    border: 2px solid #9d8f8f;
+    right: -5px;
+    display: block;
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    top: 50%;
+    transition: all 0.3s ease;
+  }
+}
+#home {
+  user-select: none;
+}

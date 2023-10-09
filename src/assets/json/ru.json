@@ -1,9 +1,71 @@
 {
   "blocks": [
     {
-      "type": "smallBlocks",
-      "tag": "contact",
+      "type": "header",
+      "text1": "Непеина Наталья Николаевна",
+      "text2": "Фотокниги - Детский фотограф - Репортажи",
+      "text3": "Контакты",
+      "id": "header"
+    },
+    {
+      "type": "imageGallery",
+      "child": [
+        {
+          "img": "assets/img/model-1.jpg"
+        },
+        {
+          "img": "assets/img/model-2.jpg"
+        },
+        {
+          "img": "assets/img/model-3.jpg"
+        },
+        {
+          "img": "assets/img/model-4.jpg"
+        },
+        {
+          "img": "assets/img/model-5.jpg"
+        },
+        {
+          "img": "assets/img/model-6.jpg"
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "child": [
+        {
+          "id": 12,
+          "text1": "Просто супер - огонь жесть круто! Просто супер - огонь жесть круто! Просто супер - огонь жесть круто!",
+          "text2": "Непеина Наталья Николаевна",
+          "text3": "Фотограф",
+          "img": "assets/img/person_1.jpg"
+        },
+        {
+          "id": 13,
+          "text1": "Lorem ipsum dolor sit amet,  ae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenat cursus nunc,",
+          "text2": "Nullam quis ante.",
+          "text3": "Eget eros ",
+          "img": "assets/img/person_2.jpg"
+        },
+        {
+          "id": 14,
+          "text1": "is faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit",
+          "text2": "Lorem ipsum dolor sit amet",
+          "text3": "Etiam sit amet orci eget",
+          "img": "assets/img/person_3.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "tag": "contactMe",
+      "type": "midBlock",
       "tagName": "Контакты",
+      "text1": "Свяжитесь со мной",
+      "text2": "Я буду рада порабоать над вашими фотографиями"
+    },
+    {
+      "type": "smallBlocks",
       "child": [
         {
           "id": 3,
@@ -36,7 +98,7 @@
       "tag": "message",
       "tagName": "Отправить сообщение",
       "type": "message",
-      "text1": "{{ messageSent }}, ваше сообщение успешно отправленно",
+      "text1": "messageSent, ваше сообщение успешно отправленно",
       "text2": "Я отвечу вам как только прочитаю сообщение!",
       "name": "Ваше имя",
       "phone": "Ваш телефон",

@@ -101,22 +101,7 @@ strong{
   border: 1px solid rgba(255,255,255,.5);
   transform: translateY(-50%);
 }
-.navbar .nav-menu li .dot::after {
-  width: 15px;
-  height: 15px;
-  border: 2px solid $primary;
-  right: -5px;
-  transform: translateY(-50%) scale(0);
-}
-.navbar .nav-menu li .dot.active::before,
-.navbar .nav-menu li:hover .dot::before {
-  background: $primary;
-  border-color: $primary;
-}
-.navbar .nav-menu li .dot.active::after,
-.navbar .nav-menu li:hover .dot::after {
-  transform: translateY(-50%) scale(1);
-}
+
 .navbar .nav-menu li .dot span {
   display: inline-block;
   opacity: 0;
@@ -130,18 +115,6 @@ strong{
   transform: translateX(20px);
   transition: all .3s ease;
   font-size: 12px;
-}
-.navbar .nav-menu li .dot span::before {
-  display: block;
-  position: absolute;
-  content: '';
-  border-left: 7px solid rgba($primary,.2);
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  top: 50%;
-  transform: translate(7px, -50%);
-  right: 0;
-  transition: all .3s ease;
 }
 .navbar .nav-menu li .dot.active span,
 .navbar .nav-menu li:hover .dot span {
@@ -254,11 +227,8 @@ strong{
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top left;
   z-index: 0;
-  @include media-breakpoint-down(lg){
-    background-position: top center !important;
-  }
   .overlay{
     position: absolute;
     top: 0;
@@ -895,7 +865,6 @@ strong{
     height: 100px;
     border-radius: (50%);
     position: relative;
-    margin-top: -75px;
     margin-left: 40px;
     .quote{
       position: absolute;
@@ -944,7 +913,8 @@ strong{
   }
 }
 
-
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 
 
@@ -976,6 +946,8 @@ strong{
 textarea.form-control {
   height: inherit!important;
 }
+
+
 
 //ABOUT
 .media-custom{

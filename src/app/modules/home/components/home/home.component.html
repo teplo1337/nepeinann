@@ -1,8 +1,9 @@
 <nav id="navbar" class="navbar">
   <ul class="nav-menu">
     <li *ngFor="let block of blocks$ | async">
-      <a [attr.data-scroll]="block.tag" [href]="'#' + block.tag" class="dot">
-        <span>{{block.tagName}}</span>
+      <a *ngIf="block.tag" [attr.data-scroll]="block.tag" [href]="'#' + block.tag" class="dot">
+        <span *ngIf="block.show">{{block.tagName}}</span>
+        <span class="dot"></span>
       </a>
     </li>
   </ul>
@@ -10,16 +11,16 @@
 <!-- End Nav Section -->
 
 <!-- Start Home Section -->
-<section id="home" class="hero-wrap js-fullheight" style="background-image: url(assets/img/bg-1.jpg);" data-stellar-background-ratio="0.5">
+<section id="home" class="hero-wrap js-fullheight" style="background-image: url(assets/img/img.webp);">
   <div class="overlay"></div>
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
       <div class="col-lg-7 d-flex align-items-center">
         <div class="text text-center">
-          <h1 class="logo"><a href="index.html"><span class="flaticon-camera-shutter"></span>Snapshot<small>Photographer / San Francisco</small></a></h1>
-          <h1 class="mb-4">We Make <br>Something Great</h1>
-          <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts.</p>
-          <p class="mt-5"><a href="#contact" class="btn-custom">Contact us</a></p>
+          <h1 class="logo"></h1>
+          <h1 class="mb-4">{{ 'text1' | translate: 'header' }}</h1>
+          <p style="text-transform: uppercase;" class="mb-4">{{ 'text2' | translate: 'header' }}</p>
+          <p class="mt-5"><a href="#contactMe"  class="btn-custom">{{ 'text3' | translate: 'header' }}</a></p>
         </div>
       </div>
     </div>
@@ -379,113 +380,34 @@
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="carousel-testimony owl-carousel">
-          <div class="item">
-            <div class="testimony-wrap p-4 pb-5">
-              <div class="user-img mb-4" style="background-image: url(assets/img/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-              </div>
-              <div class="text">
-                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <div class="pl-5">
-                  <p class="name">Garreth Smith</p>
-                  <span class="position">CEO Founder of Commercial Building</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimony-wrap p-4 pb-5">
-              <div class="user-img mb-4" style="background-image: url(assets/img/person_2.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-              </div>
-              <div class="text">
-                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <div class="pl-5">
-                  <p class="name">Garreth Smith</p>
-                  <span class="position">CEO Founder of Interior Design</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimony-wrap p-4 pb-5">
-              <div class="user-img mb-4" style="background-image: url(assets/img/person_3.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-              </div>
-              <div class="text">
-                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <div class="pl-5">
-                  <p class="name">Garreth Smith</p>
-                  <span class="position">Exterior Designer</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimony-wrap p-4 pb-5">
-              <div class="user-img mb-4" style="background-image: url(assets/img/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-              </div>
-              <div class="text">
-                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <div class="pl-5">
-                  <p class="name">Garreth Smith</p>
-                  <span class="position">Landscape Designer</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimony-wrap p-4 pb-5">
-              <div class="user-img mb-4" style="background-image: url(assets/img/person_1.jpg)">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-              </div>
-              <div class="text">
-                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <div class="pl-5">
-                  <p class="name">Garreth Smith</p>
-                  <span class="position">System Analyst</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- Start Contact Section -->
 <section class="ftco-section contact-section">
   <div class="container">
-    <div class="row justify-content-center mb-5 pb-3">
-      <div class="col-md-4 heading-section text-center">
-        <h2 class="mb-4">Свяжитесь со мной</h2>
-        <p>Я буду рада порабоать над вашими фотографиями</p>
-      </div>
-    </div>
-
     <ng-container *ngIf="{ blocks: blocks$ | async } as async">
-      <ng-container *ngFor="let block of async.blocks; let ind = index">
+      <div *ngFor="let block of async.blocks" [animateAfterAppear]="'fadeInDown'">
+        <app-gallery *ngIf="block.type === 'imageGallery'" [items]="block.child" [type]="'img'">
+        </app-gallery>
+
+        <app-gallery *ngIf="block.type === 'gallery'" [items]="block.child">
+        </app-gallery>
+
+        <app-mid-block *ngIf="block.type === 'midBlock'"
+                       [attr.id]="block.tag"
+                       [id]="block.id"
+        >
+
+        </app-mid-block>
+
         <app-message-block *ngIf="block.type === 'message'"
                            [attr.id]="block.tag"
+
                            [id]="block.id"></app-message-block>
 
         <ng-container *ngIf="block.type === 'smallBlocks'" >
-          <div class="row mb-5" [attr.id]="block.tag">
+          <div class="row mb-5" [attr.id]="block.tag" >
             <div class="col-md d-flex" *ngFor="let child of block.child" [id]="child.id">
               <div class="align-self-stretch box text-center p-4">
                 <div class="icon d-flex align-items-center justify-content-center">
@@ -499,7 +421,7 @@
           </div>
         </ng-container>
 
-      </ng-container>
+      </div>
     </ng-container>
   </div>
 </section>

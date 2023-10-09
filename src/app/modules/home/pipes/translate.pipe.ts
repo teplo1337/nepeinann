@@ -16,7 +16,15 @@ export class TranslatePipe implements PipeTransform {
       .subscribe();
   }
 
-  transform(value: any, ...arr: string[]): Observable<string> {
-    return this.translateService.instantTranslate(value, arr[0]);
+  transform(value: any, ...arr: any[]): Observable<string> {
+    const obj = arr?.[1];
+    let result = this.translateService.instantTranslate(value, arr[0]);
+    if (obj) {
+      Object.keys(obj)
+        .forEach(key =>
+          result = result.replaceAll(key, obj[key])
+        )
+    }
+    return result;
   }
 }

@@ -10,14 +10,20 @@ import { MessageBlockComponent } from './components/message-block/message-block.
 import {TranslateService} from "@app/modules/home/services/translate.service";
 import {TranslatePipe} from "@app/modules/home/pipes/translate.pipe";
 import { SmallBlockComponent } from './components/small-block/small-block.component';
-
-
+import { MidBlockComponent } from './components/mid-block/mid-block.component';
+import {AnimationsModule} from "@app/modules/animations/animations.module";
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { GalleryItemComponent } from './components/gallery/gallery-item/gallery-item/gallery-item.component';
+import {CarouselModule} from "ngx-owl-carousel-o";
 
 @NgModule({
   declarations: [
     HomeComponent,
     MessageBlockComponent,
-    SmallBlockComponent
+    SmallBlockComponent,
+    MidBlockComponent,
+    GalleryComponent,
+    GalleryItemComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +34,9 @@ import { SmallBlockComponent } from './components/small-block/small-block.compon
     NgxMaskDirective,
     ReactiveFormsModule,
     HttpClientModule,
-    TranslatePipe
+    TranslatePipe,
+    AnimationsModule,
+    CarouselModule
   ],
   providers: [
     provideEnvironmentNgxMask(),
