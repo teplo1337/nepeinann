@@ -1244,6 +1244,10 @@ textarea.form-control {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  svg {
+    color: $darken;
+    scale: 1.3;
+  }
 }
 
 // magnific pop up
