@@ -11,7 +11,7 @@
 <!-- End Nav Section -->
 
 <!-- Start Home Section -->
-<section id="home" class="hero-wrap js-fullheight" style="background-image: url(assets/img/img.webp);">
+<section [animateAfterAppear]="'fadeInDown'" id="home" class="hero-wrap js-fullheight" style="background-image: url(assets/img/img.webp);">
   <div class="overlay"></div>
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
@@ -33,7 +33,7 @@
   bigBlock: bigBlock$ | async
 } as async" class="ftco-about img ftco-section" id="about">
 
-  <div class="container" *ngIf="async.bigBlock as bigBlock">
+  <div class="container" *ngIf="async.bigBlock as bigBlock" [animateAfterAppear]="'fadeInDown'">
     <div class="row d-flex no-gutters">
       <div class="col-md-6 ">
         <app-gallery [height]="'700px'" [items]="bigBlock.child1" [type]="'img'" [maxPhoto]="bigBlock.maxPhoto || 3">
@@ -56,7 +56,7 @@
           </div>
           <div class="d-flex w-100">
             <div class="img img-about-2 mr-2">
-              <app-gallery [height]="'300px'" [items]="bigBlock.child2" [type]="'img'" [maxPhoto]="bigBlock.maxPhoto || 3">
+              <app-gallery height="250px" [items]="bigBlock.child2" [type]="'img'" >
               </app-gallery>
             </div>
           </div>

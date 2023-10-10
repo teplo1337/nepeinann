@@ -7,8 +7,8 @@ export const fadeIn: AnimationMetadata[] = [
 ];
 
 export const fadeInDown: AnimationMetadata[] = [
-  style({ opacity: 0, transform: 'translate3d(0, -20%, 0)' }),
-  animate('500ms', style({ opacity: 1, transform: 'translate3d(0, 0, 0)' })),
+  style({ opacity: 0, transform: 'translate3d(0, -3%, 0)' }),
+  animate('300ms', style({ opacity: 1, transform: 'translate3d(0, 0, 0)' })),
 ];
 
 export const fadeInUp: AnimationMetadata[] = [

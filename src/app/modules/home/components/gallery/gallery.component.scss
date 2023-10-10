@@ -10,10 +10,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 1000px;
+  height: 500px;
 
   &.single-photo {
-    height: 400px;
+    height: 300px;
     @media (min-width: 1000px) {
       height: 700px;
     }

@@ -122,17 +122,9 @@
           "img": "assets/img/portrait-18.webp"
         },
         {
-          "img": "assets/img/portrait-17.webp"
-        },
-        {
-          "img": "assets/img/portrait-16.webp"
-        },
-        {
           "img": "assets/img/portrait-15.webp"
         },
-        {
-          "img": "assets/img/portrait-14.webp"
-        },
+
         {
           "img": "assets/img/portrait-13.webp"
         },
@@ -144,6 +136,12 @@
         },
         {
           "img": "assets/img/portrait-9.webp"
+        },
+        {
+          "img": "assets/img/portrait-17.webp"
+        },
+        {
+          "img": "assets/img/portrait-16.webp"
         }
       ]
     },
@@ -159,6 +157,15 @@
       "type": "imageGallery",
       "child": [
         {
+          "img": "assets/img/portrait-6.webp"
+        },
+        {
+          "img": "assets/img/portrait-7.webp"
+        },
+        {
+          "img": "assets/img/portrait-8.webp"
+        },
+        {
           "img": "assets/img/portrait-1.webp"
         },
         {
@@ -172,15 +179,6 @@
         },
         {
           "img": "assets/img/portrait-5.webp"
-        },
-        {
-          "img": "assets/img/portrait-6.webp"
-        },
-        {
-          "img": "assets/img/portrait-7.webp"
-        },
-        {
-          "img": "assets/img/portrait-8.webp"
         }
       ]
     },
@@ -200,7 +198,10 @@
           "img": "assets/img/IMG_1515.webp"
         },
         {
-          "img": "assets/img/IMG_1701.webp"
+          "img": "assets/img/_8.webp"
+        },
+        {
+          "img": "assets/img/_9.webp"
         },
         {
           "img": "assets/img/IMG_1745.webp"
@@ -212,16 +213,7 @@
           "img": "assets/img/_1.webp"
         },
         {
-          "img": "assets/img/_4.webp"
-        },
-        {
           "img": "assets/img/_7.webp"
-        },
-        {
-          "img": "assets/img/_8.webp"
-        },
-        {
-          "img": "assets/img/_9.webp"
         }
       ]
     },
@@ -233,29 +225,28 @@
       "text1": "Отзывы",
       "text2": "Отзывы реальных людей"
     },
-
     {
       "type": "gallery",
       "child": [
         {
           "id": 12,
-          "text1": "Просто супер - огонь жесть круто! Просто супер - огонь жесть круто! Просто супер - огонь жесть круто!",
+          "text1": "Отзыв 1 текст текст текст текст текст текст текст текст текст текст текст текст текст текст",
           "text2": "Непеина Наталья Николаевна",
           "text3": "Фотограф",
           "img": "assets/img/person_1.jpg"
         },
         {
           "id": 13,
-          "text1": "Lorem ipsum dolor sit amet,  ae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. ",
-          "text2": "Nullam quis ante.",
-          "text3": "Eget eros ",
+          "text1": "Отзыв 2 текст текст текст текст текст текст текст текст текст текст",
+          "text2": "Непеина Наталья Николаевна",
+          "text3": "Фотограф",
           "img": "assets/img/person_2.jpg"
         },
         {
           "id": 14,
-          "text1": "is faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit",
-          "text2": "Lorem ipsum dolor sit amet",
-          "text3": "Etiam sit amet orci eget",
+          "text1": "Отзыв 3 текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст",
+          "text2": "Непеина Наталья Николаевна",
+          "text3": "Фотограф",
           "img": "assets/img/person_3.jpg"
         }
       ]
