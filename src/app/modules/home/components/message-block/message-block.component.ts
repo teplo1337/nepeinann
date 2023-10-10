@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ApiService} from "@app/modules/home/services/api.service";
 import {loader} from "@app/loader.script";
@@ -10,7 +10,7 @@ import {BaseComponent} from "@app/modules/core/components/base-component/base-co
   styleUrls: ['./message-block.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MessageBlockComponent extends BaseComponent{
+export class MessageBlockComponent extends BaseComponent implements OnInit {
   messageSent: string | null | undefined = window.localStorage.getItem('messageSent') || null;
 
   form = new FormGroup({
@@ -18,6 +18,7 @@ export class MessageBlockComponent extends BaseComponent{
     phone: new FormControl(null, [Validators.pattern(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/), Validators.required]),
     subject: new FormControl(null, [Validators.required]),
     message: new FormControl(null, [Validators.required]),
+    token: new FormControl(null)
   })
 
   constructor(
@@ -25,10 +26,26 @@ export class MessageBlockComponent extends BaseComponent{
     private cdr: ChangeDetectorRef
   ) {
     super();
+
+  }
+
+  ngOnInit() {
+    this.loadScript('https://smartcaptcha.yandexcloud.net/captcha.js');
+  }
+
+  loadScript(scriptSrc: string): Promise<void> {
+    const sc = document.createElement('script');
+    sc.async = true;
+    sc.type = 'text/javascript';
+    sc.src = scriptSrc;
+    document.body.appendChild(sc);
+    return new Promise(res => (sc.onload = () => res()));
   }
 
   send(): void {
     loader(true);
+    const token = (document.querySelector('[name="smart-token"]') as any)?.value;
+    this.form.controls.token.setValue(token as any);
     this.apiService.postMessage(this.form.getRawValue())
       .subscribe(_ => {
         const name = this.form.value.name;
