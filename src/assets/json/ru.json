@@ -8,15 +8,115 @@
       "id": "header"
     },
     {
+      "id": 4124,
+      "type": "bigBlock",
+      "text1": "Файн Арт (Fine Art)",
+      "text2": "Это художественная фотография. Многие считают, что Fine Art – это обязательно светлая, с мягким фокусом, в пастельных оттенках фотография, но это не так. Художественной может быть и темная резкая фотография.",
+      "text3": "Творческое искусство, особенно визуальное искусство, чья продукция ценится прежде всего или исключительно за их творческий, эстетический или интеллектуальный контент.",
+      "text4": "- oxford dictionary fine art",
+      "text5": "Фотокартины",
+      "child1": [
+        {
+          "img": "assets/img/02_.webp"
+        },
+        {
+          "img": "assets/img/30x30_.webp"
+        }
+      ],
+      "child2": [
+        {
+          "img": "assets/img/1.webp"
+        },
+        {
+          "img": "assets/img/2.webp"
+        },
+        {
+          "img": "assets/img/3.webp"
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "tag": "portrait",
+      "type": "midBlock",
+      "tagName": "portrait",
+      "text1": "Групповые фото",
+      "text2": "В школах и детских садах"
+    },
+    {
+      "type": "imageGallery",
+      "maxPhoto": 1,
+      "child": [
+        {
+          "img": "assets/img/group_photo_1.webp"
+        },
+        {
+          "img": "assets/img/group_photo_2.webp"
+        },
+        {
+          "img": "assets/img/group_photo_3.webp"
+        },
+        {
+          "img": "assets/img/group_photo_4.webp"
+        },
+        {
+          "img": "assets/img/group_photo_5.webp"
+        }
+      ]
+    },
+
+
+    {
+      "id": 1212,
+      "tag": "portrait",
+      "type": "midBlock",
+      "tagName": "portrait",
+      "text1": "Детский сад",
+      "text2": "Портретные фото"
+    },
+    {
+      "type": "imageGallery",
+      "child": [
+
+        {
+          "img": "assets/img/IMG_0175.webp"
+        },
+        {
+          "img": "assets/img/IMG_0349.webp"
+        },
+        {
+          "img": "assets/img/IMG_2802.webp"
+        },
+        {
+          "img": "assets/img/IMG_2807.webp"
+        },
+        {
+          "img": "assets/img/IMG_0137.webp"
+        },
+        {
+          "img": "assets/img/IMG_8396.webp"
+        },
+        {
+          "img": "assets/img/IMG_8809.webp"
+        },
+        {
+          "img": "assets/img/IMG_9582.webp"
+        },
+        {
+          "img": "assets/img/IMG_0005.webp"
+        }
+      ]
+    },
+    {
       "id": 121,
       "tag": "portrait",
       "type": "midBlock",
       "tagName": "portrait",
-      "text1": "Детские портретные фото",
-      "text2": "Детские портреные фото"
+      "text1": "Младшие классы",
+      "text2": "Портретные фото"
     },
     {
-      "type": "images",
+      "type": "imageGallery",
       "child": [
         {
           "img": "assets/img/portrait-18.webp"
@@ -52,8 +152,8 @@
       "tag": "portrait",
       "type": "midBlock",
       "tagName": "portrait",
-      "text1": "Школьные портреные фото",
-      "text2": "Школьные портреные фото"
+      "text1": "Старшие классы",
+      "text2": "Портретные фото"
     },
     {
       "type": "imageGallery",
@@ -85,6 +185,47 @@
       ]
     },
     {
+      "id": 124,
+      "tag": "portrait",
+      "type": "midBlock",
+      "tagName": "portrait",
+      "text1": "Репортажи",
+      "text2": "В школах и детских садах"
+    },
+    {
+      "type": "imageGallery",
+      "maxPhoto": 1,
+      "child": [
+        {
+          "img": "assets/img/IMG_1515.webp"
+        },
+        {
+          "img": "assets/img/IMG_1701.webp"
+        },
+        {
+          "img": "assets/img/IMG_1745.webp"
+        },
+        {
+          "img": "assets/img/IMG_5511.webp"
+        },
+        {
+          "img": "assets/img/_1.webp"
+        },
+        {
+          "img": "assets/img/_4.webp"
+        },
+        {
+          "img": "assets/img/_7.webp"
+        },
+        {
+          "img": "assets/img/_8.webp"
+        },
+        {
+          "img": "assets/img/_9.webp"
+        }
+      ]
+    },
+    {
       "id": 72,
       "tag": "review",
       "type": "midBlock",
@@ -92,6 +233,7 @@
       "text1": "Отзывы",
       "text2": "Отзывы реальных людей"
     },
+
     {
       "type": "gallery",
       "child": [

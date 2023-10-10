@@ -9,6 +9,8 @@ export class GalleryComponent {
 
   @Input() items: any[] = [];
   @Input() type: 'block' | 'img' = 'block';
+  @Input() maxPhoto = 3;
+  @Input() height: string | null = null
 
   config = {
     center: true,
@@ -26,9 +28,13 @@ export class GalleryComponent {
         items: 1
       },
       1060:{
-        items: 3
+        items: this.maxPhoto
       }
     }
+  }
+
+  ngOnInit(): void {
+    this.config.responsive["1060"].items = this.maxPhoto;
   }
 
 }
