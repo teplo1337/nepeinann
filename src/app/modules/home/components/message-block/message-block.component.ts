@@ -30,7 +30,19 @@ export class MessageBlockComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadScript('https://smartcaptcha.yandexcloud.net/captcha.js');
+    this.loadScript('https://smartcaptcha.yandexcloud.net/captcha.js?render=onload')
+      .then(_ => {
+        const w = (window as any);
+        if (!w['smartCaptcha']) {
+          return;
+        }
+
+        w['smartCaptcha']?.render('captcha-container', {
+          sitekey: 'ysc1_PiASlAngeesQ4EzSkHAGEXuQOoow1LeFafYzABobc8070f3b',
+          invisible: true, // Сделать капчу невидимой,
+          callback: this.send.bind(this)
+        });
+      });
   }
 
   loadScript(scriptSrc: string): Promise<void> {
@@ -42,7 +54,17 @@ export class MessageBlockComponent extends BaseComponent implements OnInit {
     return new Promise(res => (sc.onload = () => res()));
   }
 
-  send(): void {
+  handleSubmit(): void {
+    const w = (window as any);
+
+    if (!w.smartCaptcha) {
+      return;
+    }
+
+    w.smartCaptcha.execute();
+  }
+
+  private send(): void {
     loader(true);
     const token = (document.querySelector('[name="smart-token"]') as any)?.value;
     this.form.controls.token.setValue(token as any);
