@@ -17,13 +17,17 @@
         <textarea name="" id="" cols="30" rows="7" class="form-control" [placeholder]="'message' | translate: id" formControlName="message"></textarea>
       </div>
 
-      <div
-        id="captcha-container"
-        class="smart-captcha"
-        data-sitekey="ysc1_PiASlAngeesQ4EzSkHAGEXuQOoow1LeFafYzABobc8070f3b"
-        style="display: none"
-      ></div>
+
       <div class="form-group">
+        <div
+          id="captcha-container"
+          class="smart-captcha"
+          data-sitekey="ysc1_PiASlAngeesQ4EzSkHAGEXuQOoow1LeFafYzABobc8070f3b"
+          style="height: 100px;
+              width: 100%;
+              max-width: 313px;
+              margin: 20px 0;"
+        ></div>
         <input (click)="handleSubmit()" [disabled]="form.invalid" [value]="'send' | translate: id" class="send btn btn-primary py-3 px-5">
       </div>
     </form>

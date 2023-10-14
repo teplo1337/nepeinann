@@ -39,8 +39,9 @@ export class MessageBlockComponent extends BaseComponent implements OnInit {
 
         w['smartCaptcha']?.render('captcha-container', {
           sitekey: 'ysc1_PiASlAngeesQ4EzSkHAGEXuQOoow1LeFafYzABobc8070f3b',
-          invisible: true, // Сделать капчу невидимой,
-          callback: this.send.bind(this)
+          invisible: false, // Сделать капчу невидимой,
+          callback: this.send.bind(this),
+          shieldPosition: 'bottom',
         });
       });
   }
