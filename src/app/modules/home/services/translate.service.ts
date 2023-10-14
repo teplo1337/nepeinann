@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {Injectable, isDevMode} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, map, Observable} from "rxjs";
 
@@ -9,11 +9,12 @@ export class TranslateService {
   });
 
   blocks$ = this._translateObject.asObservable().pipe(map(r => r.blocks));
+  private uri = isDevMode() ? '/assets/json/ru.json' : '/static/json/blocks.json';
 
   constructor(private http: HttpClient ) {
-    this.http.get('/assets/json/ru.json').subscribe(res => this._translateObject.next(res));
+    this.http.get(this.uri)
+      .subscribe(res => this._translateObject.next(res));
   }
-
 
   instantTranslate(key: string, id: string, obj = this._translateObject.getValue().blocks) {
     const arr = obj.filter((s: any) => s.child).reduce((a: any[], b: any) => [...a, ...b.child], []);
