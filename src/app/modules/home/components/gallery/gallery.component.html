@@ -1,7 +1,7 @@
 <owl-carousel-o [options]="config">
   <ng-template  [width]="400" carouselSlide *ngFor="let item of items">
 
-    <div *ngIf="type === 'img'" class="img" [ngStyle]="{
+    <div *ngIf="type === 'img'" class="photo" [ngStyle]="{
     'background-image': 'url(' + item.img +')',
      width: '100%',
      height

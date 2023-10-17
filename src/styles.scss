@@ -8,9 +8,11 @@ $font-secondary: 'Noto Serif', serif;
 $white: #fff;
 $black: #000;
 $darken: #191a1c;
+$darkenAlt: #75b9c2;
 $light: #9da1a5;
 $primary: #9d8f8f;
 $primaryAlt: darken($darken,30%);
+$primaryBlocks: #06a0a0;
 
 html {
   // overflow-x: hidden;
@@ -57,7 +59,6 @@ strong{
 .container{
   max-width: 1200px;
 }
-
 
 .navbar {
   position: fixed;
@@ -851,7 +852,7 @@ strong{
       background: rgba(255,255,255,.8);
       display: inline-block;
       &.active {
-        background: $primary;
+        background: $black;
       }
     }
   }
@@ -915,7 +916,6 @@ strong{
 
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
-
 
 
 .form-control {
@@ -1216,21 +1216,33 @@ textarea.form-control {
 }
 
 .heading-section{
+
+  &.text-center {
+    padding: 20px;
+  }
+
   .subheading{
     line-height: .8;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 4px;
     font-weight: 600;
-    color: $primary;
+    color:$white;
   }
   h2{
     font-size: 16px;
-    color: $light;
+    color: $white;
     line-height: 1.4;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+
+  &.lighten {
+    h2 {
+      color:$black!important;
+    }
+    color:$black!important;
   }
 }
 
@@ -1626,8 +1638,7 @@ textarea.form-control {
         margin-bottom: 10px;
         transition: .3s all ease;
         &.active {
-
-          background: $primary;
+          background: $black;
         }
       }
     }
@@ -1636,6 +1647,7 @@ textarea.form-control {
 
 .contact-section {
   width: 100%;
+  background: $darkenAlt;
   .box{
     background: lighten($darken,3%);
     width: 100%;
@@ -2065,4 +2077,21 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+}
+.blocks-darken {
+  background-color: $darken;
+}
+.blocks-lighten {
+  .owl-theme .owl-dots .owl-dot span {
+    background-color: white;
+  }
+  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: $black;
+  }
+}
+.owl-theme .owl-dots .owl-dot span {
+  background-color: white;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background-color: $primaryBlocks;
 }

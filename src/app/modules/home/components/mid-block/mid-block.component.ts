@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {BaseComponent} from "@app/modules/core/components/base-component/base-component";
 
 @Component({
@@ -8,5 +8,6 @@ import {BaseComponent} from "@app/modules/core/components/base-component/base-co
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MidBlockComponent extends BaseComponent {
+  @Input() darken: boolean = true;
 
 }

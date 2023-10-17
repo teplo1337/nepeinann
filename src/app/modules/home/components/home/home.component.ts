@@ -8,7 +8,10 @@ import {map} from "rxjs";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
-  blocks$ = this.translateService.blocks$;
+  private blocks$ = this.translateService.blocks$;
+  lightBlock$ = this.blocks$.pipe(map(res => res.filter((b: any) => !b.dark)));
+  darkBlock$ = this.blocks$.pipe(map(res => res.filter((b: any) => b.dark)));
+
   bigBlock$ = this.translateService.blocks$.pipe(map(bs => bs.find((b: any) => b.type === 'bigBlock')));
   constructor(private translateService: TranslateService) {
 

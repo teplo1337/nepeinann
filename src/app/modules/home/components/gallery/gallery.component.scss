@@ -6,16 +6,18 @@
 
 }
 
-.img {
+.photo{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 500px;
 
   &.single-photo {
-    height: 300px;
+    height: 600px;
+    background-size: contain;
+
     @media (min-width: 1000px) {
-      height: 700px;
+      height: 800px;
     }
     @media (min-width: 1400px) {
       height: 900px;
