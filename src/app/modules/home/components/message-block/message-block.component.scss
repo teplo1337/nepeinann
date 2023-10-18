@@ -1,18 +1,23 @@
 .send{
   height: 40px;
   border-radius: 4px;
-  &[disabled] {
-    background-color: #202224;
-    color: #9d8f8f;
-    cursor: not-allowed;
+  color: white;
 
-    &:hover {
-      color: #9d8f8f;
-    }
-  }
   &:hover {
     background: #9d8f8f;
     color: white;
+  }
+
+  &[disabled] {
+    color: white;
+    cursor: not-allowed;
+
+    &:hover {
+      color: white;
+    }
+  }
+  @media (max-width: 1000px) {
+    width: 100%
   }
 }
 

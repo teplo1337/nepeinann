@@ -41,11 +41,13 @@
       "type": "midBlock",
       "tagName": "portrait",
       "text1": "Групповые фото",
-      "text2": "В школах и детских садах"
+      "text2": "В школах и детских садах",
+      "height": "600px"
     },
     {
       "type": "imageGallery",
       "maxPhoto": 1,
+
       "child": [
         {
           "img": "assets/img/group_photo_1.webp"
@@ -76,8 +78,8 @@
     },
     {
       "type": "imageGallery",
-      "child": [
 
+      "child": [
         {
           "img": "assets/img/IMG_0175.webp"
         },
@@ -117,6 +119,7 @@
     },
     {
       "type": "imageGallery",
+
       "child": [
         {
           "img": "assets/img/portrait-18.webp"
@@ -155,6 +158,7 @@
     },
     {
       "type": "imageGallery",
+
       "child": [
         {
           "img": "assets/img/portrait-6.webp"
@@ -223,12 +227,10 @@
       "type": "midBlock",
       "tagName": "Отзывы",
       "text1": "Отзывы",
-      "text2": "Отзывы реальных людей",
-      "dark": true
+      "text2": "Моих клиентов"
     },
     {
       "type": "gallery",
-      "dark": true,
       "child": [
         {
           "id": 12,
@@ -259,12 +261,10 @@
       "type": "midBlock",
       "tagName": "Контакты",
       "text1": "Свяжитесь со мной",
-      "text2": "Я буду рада порабоать над вашими фотографиями",
-      "dark": true
+      "text2": "Я буду рада поработать над вашими фотографиями"
     },
     {
       "type": "smallBlocks",
-      "dark": true,
       "child": [
         {
           "id": 3,
@@ -303,8 +303,7 @@
       "phone": "Ваш телефон",
       "subject": "Тема сообщения",
       "message": "Сообщение",
-      "send": "Отправить",
-      "dark": true
+      "send": "Отправить"
     }
   ]
 }

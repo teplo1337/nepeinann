@@ -121,8 +121,8 @@
 
 <section class="ftco-section contact-section blocks-lighten">
   <div class="container">
-    <ng-container *ngIf="{ lightBlock: lightBlock$ | async, darkBlock: darkBlock$ | async } as async">
-      <div *ngFor="let block of async.lightBlock" [animateAfterAppear]="'fadeInDown'">
+    <ng-container *ngIf="{ blocks: blocks$ | async  } as async">
+      <div *ngFor="let block of async.blocks" [animateAfterAppear]="'fadeInDown'">
 
 
         <app-gallery-image *ngIf="block.type === 'images'" [items]="block.child"  ></app-gallery-image>
@@ -163,54 +163,6 @@
 
       </div>
     </ng-container>
-  </div>
-</section>
-
-<section class="ftco-section contact-section blocks-darken">
-  <div class="container">
-    <ng-container *ngIf="{ lightBlock: lightBlock$ | async, darkBlock: darkBlock$ | async } as async">
-      <div *ngFor="let block of async.darkBlock" [animateAfterAppear]="'fadeInDown'" >
-
-
-        <app-gallery-image *ngIf="block.type === 'images'" [items]="block.child"  ></app-gallery-image>
-
-        <app-gallery *ngIf="block.type === 'imageGallery'" [items]="block.child" [type]="'img'" [maxPhoto]="block.maxPhoto || 3">
-        </app-gallery>
-
-        <app-gallery *ngIf="block.type === 'gallery'" [items]="block.child">
-        </app-gallery>
-
-        <app-mid-block *ngIf="block.type === 'midBlock'"
-                       [attr.id]="block.tag"
-                       [id]="block.id"
-        >
-
-        </app-mid-block>
-
-        <app-message-block *ngIf="block.type === 'message'"
-                           [attr.id]="block.tag"
-
-                           [id]="block.id"></app-message-block>
-
-        <ng-container *ngIf="block.type === 'smallBlocks'" >
-          <div class="row mb-5" [attr.id]="block.tag" >
-            <div class="col-md d-flex" *ngFor="let child of block.child" [id]="child.id">
-              <div class="align-self-stretch box text-center p-4">
-                <div class="icon d-flex align-items-center justify-content-center">
-                  <span class="icon-globe"></span>
-                </div>
-                <div>
-                  <app-small-block [id]="child.id"></app-small-block>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ng-container>
-
-      </div>
-
-    </ng-container>
-
   </div>
 </section>
 

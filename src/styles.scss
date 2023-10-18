@@ -5,13 +5,13 @@
 $font-primary: 'Noto Sans',Arial, sans-serif;
 $font-secondary: 'Noto Serif', serif;
 
-$white: #fff;
+$white: #272319;
 $black: #000;
-$darken: #191a1c;
-$darkenAlt: #75b9c2;
-$light: #9da1a5;
+$darken: #EDEAE5;
+$darkenAlt: #EDEAE5;
+$light: #715d4b;
 $primary: #9d8f8f;
-$primaryAlt: darken($darken,30%);
+$primaryAlt: #9d8f8f;
 $primaryBlocks: #06a0a0;
 
 html {
@@ -32,6 +32,12 @@ body {
     position: fixed;
     height: 100%;
     width: 100%;
+  }
+}
+
+#home {
+  h1 {
+    color: white;
   }
 }
 a {
@@ -923,9 +929,9 @@ strong{
   background: transparent !important;
   color: $light !important;
   font-size: 13px !important;
-  border-radius: 0px;
+  border-radius: 3px;
   box-shadow: none!important;
-  border: 1px solid rgba(255,255,255,.1) !important;
+  border: 1px solid $light !important;
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $light !important;
   }
@@ -1109,7 +1115,7 @@ textarea.form-control {
       position: relative;
       span {
         position: absolute;
-        font-size: 20px;
+        line-height: 16px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -2081,17 +2087,9 @@ textarea.form-control {
 .blocks-darken {
   background-color: $darken;
 }
-.blocks-lighten {
-  .owl-theme .owl-dots .owl-dot span {
-    background-color: white;
-  }
-  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-    background-color: $black;
-  }
-}
 .owl-theme .owl-dots .owl-dot span {
-  background-color: white;
+  background-color: $primary;
 }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-  background-color: $primaryBlocks;
+  background-color: $white;
 }

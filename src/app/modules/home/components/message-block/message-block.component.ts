@@ -18,7 +18,7 @@ export class MessageBlockComponent extends BaseComponent implements OnInit {
     phone: new FormControl(null, [Validators.pattern(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/), Validators.required]),
     subject: new FormControl(null, [Validators.required]),
     message: new FormControl(null, [Validators.required]),
-    token: new FormControl(null)
+    token: new FormControl(null, [Validators.required])
   })
 
   constructor(
@@ -40,10 +40,16 @@ export class MessageBlockComponent extends BaseComponent implements OnInit {
         w['smartCaptcha']?.render('captcha-container', {
           sitekey: 'ysc1_PiASlAngeesQ4EzSkHAGEXuQOoow1LeFafYzABobc8070f3b',
           invisible: false, // Сделать капчу невидимой,
-          callback: this.send.bind(this),
           shieldPosition: 'bottom',
+          callback: this.setToken.bind(this)
         });
       });
+  }
+
+  setToken(): void {
+    const token = (document.querySelector('[name="smart-token"]') as any)?.value;
+    this.form.controls.token.setValue(token as any, { emitEvent: true});
+    this.cdr.markForCheck();
   }
 
   loadScript(scriptSrc: string): Promise<void> {
@@ -55,20 +61,9 @@ export class MessageBlockComponent extends BaseComponent implements OnInit {
     return new Promise(res => (sc.onload = () => res()));
   }
 
-  handleSubmit(): void {
-    const w = (window as any);
-
-    if (!w.smartCaptcha) {
-      return;
-    }
-
-    w.smartCaptcha.execute();
-  }
-
-  private send(): void {
+  send(): void {
     loader(true);
-    const token = (document.querySelector('[name="smart-token"]') as any)?.value;
-    this.form.controls.token.setValue(token as any);
+
     this.apiService.postMessage(this.form.getRawValue())
       .subscribe(_ => {
         const name = this.form.value.name;

@@ -7,14 +7,13 @@
 }
 
 .photo{
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   height: 500px;
 
   &.single-photo {
-    height: 600px;
-    background-size: contain;
+    height: 300px;
 
     @media (min-width: 1000px) {
       height: 800px;
@@ -22,6 +21,10 @@
     @media (min-width: 1400px) {
       height: 900px;
     }
+  }
+
+  &.contain {
+    background-size: contain;
   }
 
   @media (max-width: 400px) {
